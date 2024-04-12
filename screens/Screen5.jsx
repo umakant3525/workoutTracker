@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons'; // Import both Ionicons and MaterialCommunityIcons from Expo
+import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient'; // Import LinearGradient from expo-linear-gradient
 
 const Screen5 = () => {
   const [options, setOptions] = useState([
@@ -38,7 +39,14 @@ const Screen5 = () => {
       </View>
 
       <TouchableOpacity style={styles.btnContainer} onPress={() => {}}>
-        <Text style={styles.btnText}>Confirm</Text>
+        <LinearGradient
+          colors={['#95BEFF','#7B91FF']}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 0 }}
+          style={styles.btnGradient}
+        >
+          <Text style={styles.btnText}>Confirm</Text>
+        </LinearGradient>
       </TouchableOpacity>
     </View>
   );
@@ -79,12 +87,15 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   btnContainer: {
+    borderRadius: 12,
+    marginTop: 100,
+    overflow: 'hidden', // Ensure child LinearGradient doesn't overflow
+  },
+  btnGradient: {
     height: 50,
     borderRadius: 12,
-    backgroundColor: "#7B91FF",
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 100,
   },
   btnText: {
     color: "#fff",
