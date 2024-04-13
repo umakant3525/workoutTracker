@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Circle Design</title>
+<style>
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .circle-container {
+        position: relative;
+        width: 300px; /* You can adjust the total size of the circles */
+        height: 300px; /* You can adjust the total size of the circles */
+    }
+    .inner-circle {
+        position: absolute;
+        width: 200px; /* You can adjust the size of the inner circle */
+        height: 200px; /* You can adjust the size of the inner circle */
+        border-radius: 50%;
+        background-color: #ff5733; /* Full color for the inner circle */
+        top: 50%; /* Centers the inner circle vertically */
+        left: 50%; /* Centers the inner circle horizontally */
+        transform: translate(-50%, -50%);
+    }
+    .outer-circle {
+        position: absolute;
+        width: 240px; /* You can adjust the size of the outer circle */
+        height: 240px; /* You can adjust the size of the outer circle */
+        border-radius: 50%;
+        border: 1px solid black; /* Color of the outer circle */
+        top: 50%; /* Centers the outer circle vertically */
+        left: 50%; /* Centers the outer circle horizontally */
+        transform: translate(-50%, -50%);
+        overflow: hidden; /* Hides the portion of the outer ring outside the container */
+    }
+    .outer-circle::before {
+        content: "";
+        position: absolute;
+        width: 100%; /* Changed width to 100% for a half-ring effect */
+        height: 50%; /* Keeps the height at 50% */
+        top: 0;
+        right: 0;
+        border-top: 1px solid black;
+        border-right: 1px solid black;
+        border-radius: 0 100% 0 0;
+        transform: translate(50%, -50%) rotate(90deg); /* Changed rotate value to 90deg for a half-ring */
+    }
+    .content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 24px;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="circle-container">
+        <div class="outer-circle"></div>
+        <div class="inner-circle">
+            <div class="content">Hi</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

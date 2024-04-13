@@ -1,21 +1,15 @@
 // Btn.js
 import React from 'react';
 import { StyleSheet, TouchableOpacity, View } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
 
 const Btn = ({ handlePress }) => {
   return (
     <View style={styles.bottomRight}>
       <TouchableOpacity style={styles.btnBorder} onPress={handlePress}>
-        <LinearGradient
-          colors={['#DEE5FF', '#809AFF']}
-          start={{ x: 0, y: 0 }}
-          end={{ x: 1, y: 1 }}
-          style={styles.innercircle}
-        >
+        <View style={styles.innercircle}>
           <Ionicons name="chevron-forward" size={24} color="white" />
-        </LinearGradient>
+        </View>
       </TouchableOpacity>
     </View>
   );
@@ -38,9 +32,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   innercircle: {
+    backgroundColor: '#89A1FF',
     width: 50,
     height: 50,
-    borderRadius: 25,
+    borderRadius: 50,
     justifyContent: 'center',
     alignItems: 'center',
   },
