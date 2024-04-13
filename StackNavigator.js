@@ -16,12 +16,12 @@ const StackNavigator = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-          {/*<Stack.Screen name="Screen1" component={Screen1} options={{ headerShown: false }} />
+          {/* <Stack.Screen name="Screen1" component={Screen1} options={{ headerShown: false }} />
        <Stack.Screen name="Screen2" component={Screen2} options={{ headerShown: false }} />
         <Stack.Screen name="Screen3" component={Screen3} options={{ headerShown: false }} />
         <Stack.Screen name="Screen4" component={Screen4} options={{ headerShown: false }} /> 
         <Stack.Screen name="Screen5" component={Screen5} options={{ headerShown: false }} />
-         <Stack.Screen name="Screen6" component={Screen6} options={{ headerShown: false }} />  */}
+         <Stack.Screen name="Screen6" component={Screen6} options={{ headerShown: false }} />   */}
         <Stack.Screen name="Screen7" component={Screen7} options={{ headerShown: false }} /> 
         {/* <Stack.Screen name="BottomTab" component={BottomTabs} options={{ headerShown: false }} /> */}
 

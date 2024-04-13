@@ -1,7 +1,8 @@
 import React from "react";
-import { StyleSheet, Text, View, ScrollView } from "react-native";
+import { StyleSheet, Text, View, ScrollView, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
+import { FontAwesome5 } from "@expo/vector-icons"; // Import FontAwesome5
 import Date from "../components/s7/Date";
 import Notebook from "../components/s7/Notebook";
 import BottomTabs from "../components/BottomTabs";
@@ -34,6 +35,18 @@ const Screen7 = () => {
       <ScrollView style={styles.scrollContainer}>
         <Notebook />
       </ScrollView>
+
+      {/* Button at bottom right */}
+      <TouchableOpacity style={styles.buttonContainer}>
+        <LinearGradient
+          colors={["#E9B1E0", "#D3A5F2"]}
+          style={styles.gradient}
+          start={{ x: 1, y: 1 }} // Gradient start point
+          end={{ x: 0, y: 0 }} // Gradient end point
+        >
+          <FontAwesome5 name="plus" size={16} color="white" />
+        </LinearGradient>
+      </TouchableOpacity>
 
       <BottomTabs />
     </View>
@@ -68,7 +81,28 @@ const styles = StyleSheet.create({
   },
   scrollContainer: {
     flex: 1,
-    marginTop: 5,
+    marginTop: 0, // Adjusted marginTop here
+    // backgroundColor: "red",
+  },
+  buttonContainer: {
+    position: "absolute",
+    bottom: 100,
+    right: 10,
+  },
+  gradient: {
+    width: 63,
+    height: 63,
+    borderRadius: 63 / 2,
+    justifyContent: "center",
+    alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.5,
+    shadowRadius: 6.5,
+    elevation: 8,
   },
 });
 
