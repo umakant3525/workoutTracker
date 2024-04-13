@@ -17,7 +17,7 @@ const DateComponent = () => {
         // Add more dates as needed
     ];
     
-    const [hoveredDate, setHoveredDate] = useState(null);
+    const [selectedDate, setSelectedDate] = useState("2");
 
     return (
         <View style={styles.container}>
@@ -32,19 +32,18 @@ const DateComponent = () => {
                 {days.map((day) => (
                     <Pressable
                         key={day.id}
-                        onPressIn={() => setHoveredDate(day.id)}
-                        onPressOut={() => setHoveredDate(null)}
+                        onPress={() => setSelectedDate(day.id)}
                     >
                         <LinearGradient
                             start={{ x: 1, y: 1 }} // Starting position of gradient (top-left corner)
                             end={{ x: 0, y: 0 }} // Ending position of gradient (bottom-right corner)
-                            colors={hoveredDate === day.id ? ['#8DA4FF', '#D1DBFF'] : ['#ffff', '#ffff']}
+                            colors={selectedDate === day.id ? ['#8DA4FF', '#D1DBFF'] : ['#ffff', '#ffff']}
                             style={styles.dateCard}
                         >
-                            <Text style={[styles.dayText, { color: hoveredDate === day.id ? 'white' : 'black' }]}>
+                            <Text style={[styles.dayText, { color: selectedDate === day.id ? 'white' : 'black' }]}>
                                 {day.day}
                             </Text>
-                            <Text style={[styles.dateText, { color: hoveredDate === day.id ? 'white' : 'black' }]}>
+                            <Text style={[styles.dateText, { color: selectedDate === day.id ? 'white' : 'black' }]}>
                                 {day.date}
                             </Text>
                         </LinearGradient>
