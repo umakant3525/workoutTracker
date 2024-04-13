@@ -79,9 +79,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   circularImage: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
+    width: 50,
+    height: 50,
+    borderRadius: 25,
   },
   textColumn: {
     flex: 1,

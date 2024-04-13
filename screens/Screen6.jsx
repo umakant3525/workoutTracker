@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import SwitchToggle from 'react-native-switch-toggle';
@@ -18,7 +18,7 @@ const workoutData = [
   },
   {
     id: 2,
-    imageSource: require('../assets/img/s61.png'),
+    imageSource: require('../assets/img/s62.png'),
     workoutName: 'Upper Body Workout',
     time: '4 Feb, 3:30 pm',
   },
@@ -51,7 +51,7 @@ const barGraphData = [
   { time: '12:00pm', calories: 120 },
 ];
 
-const Screen6 = () => {
+const Screen6 = ({ navigation }) => {
   const [switchStates, setSwitchStates] = useState(workoutData.map(() => true));
 
   const toggleSwitch = (index) => {
@@ -63,13 +63,15 @@ const Screen6 = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <View style={styles.box}>
-          <Ionicons name="chevron-back" size={20} color="black" />
-        </View>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <View style={styles.box}>
+            <Ionicons name="chevron-back" size={20} color="black" />
+          </View>
+        </TouchableOpacity>
         <Text style={styles.title}>Workout Tracker</Text>
       </View>
 
-      {/* After some time i will use library also */}
+      {/* After some time I will use library also */}
       <GraphSection />
 
       <ScrollView>

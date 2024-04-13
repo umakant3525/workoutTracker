@@ -2,7 +2,8 @@ import React from "react";
 import { StyleSheet, Text, View, ScrollView, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
-import { FontAwesome5 } from "@expo/vector-icons"; // Import FontAwesome5
+import { FontAwesome5 } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native"; 
 import Date from "../components/s7/Date";
 import Notebook from "../components/s7/Notebook";
 import BottomTabs from "../components/BottomTabs";
@@ -23,12 +24,16 @@ const workoutData = [
 ];
 
 const Screen7 = () => {
+  const navigation = useNavigation(); 
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <View style={styles.box}>
-          <Ionicons name="chevron-back" size={20} color="black" />
-        </View>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <View style={styles.box}>
+            <Ionicons name="chevron-back" size={20} color="black" />
+          </View>
+        </TouchableOpacity>
         <Text style={styles.title}>Workout Schedule</Text>
       </View>
       <Date />
@@ -36,13 +41,12 @@ const Screen7 = () => {
         <Notebook />
       </ScrollView>
 
-      {/* Button at bottom right */}
       <TouchableOpacity style={styles.buttonContainer}>
         <LinearGradient
           colors={["#E9B1E0", "#D3A5F2"]}
           style={styles.gradient}
-          start={{ x: 1, y: 1 }} // Gradient start point
-          end={{ x: 0, y: 0 }} // Gradient end point
+          start={{ x: 1, y: 1 }}
+          end={{ x: 0, y: 0 }}
         >
           <FontAwesome5 name="plus" size={16} color="white" />
         </LinearGradient>
@@ -81,8 +85,7 @@ const styles = StyleSheet.create({
   },
   scrollContainer: {
     flex: 1,
-    marginTop: 0, // Adjusted marginTop here
-    // backgroundColor: "red",
+    marginTop: 0,
   },
   buttonContainer: {
     position: "absolute",

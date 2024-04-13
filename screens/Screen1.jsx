@@ -1,18 +1,18 @@
 import React from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
+import Btn from "../components/s1/Btn";
 
 const Screen1 = () => {
   const navigation = useNavigation();
 
-  const handlePress = () => {
-    navigation.navigate('Screen2'); // Assuming 'LanguageTranslator' is the screen to navigate to
+  const handlePress = (screenName) => {
+    navigation.navigate(screenName); 
   };
 
   return (
     <View style={styles.container}>
-     <TouchableOpacity style={styles.link} onPress={handlePress} >
+      <TouchableOpacity style={styles.link} onPress={() => handlePress('Screen3')}>
         <Text style={styles.linkText}>Skip</Text>
       </TouchableOpacity>
       <Image style={styles.image} source={require("../assets/img/s1.png")} />
@@ -21,14 +21,7 @@ const Screen1 = () => {
         Don’t worry if you have trouble determining your goals, We can help you
         determine your goals and track your goals
       </Text>
-
-      <View style={styles.bottomRight}>
-        <TouchableOpacity style={styles.btnBorder} onPress={handlePress} target="_blank">
-          <View style={styles.innercircle}>
-            <Ionicons name="chevron-forward" size={24} color="white" />
-          </View>
-        </TouchableOpacity>
-      </View>
+      <Btn handlePress={() => handlePress('Screen2')} />
     </View>
   );
 };
@@ -54,7 +47,7 @@ const styles = StyleSheet.create({
   image: {
     width: 282,
     height: 282,
-    marginTop: 132,
+    marginTop: 150,
     alignSelf: "center",
   },
   title: {
@@ -62,41 +55,18 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     lineHeight: 24.38,
     color: "black",
-    marginTop: 20,
+    marginTop: 40,
     marginLeft: 16,
   },
   subtitle: {
     fontSize: 16,
-    fontWeight: "500",
+    fontWeight: "400",
     lineHeight: 19.5,
     textAlign: "left",
     color: "#787878",
-    marginTop: 10,
+    marginTop: 20,
     marginLeft: 16,
     marginRight: 16
-  },
-  bottomRight: {
-    position: "absolute",
-    bottom: 20,
-    right: 20,
-  },
-  btnBorder: {
-    height: 60,
-    width: 60,
-    borderRadius: 30, 
-    backgroundColor: "white",
-    borderWidth: 1,
-    borderColor: "#89A1FF",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  innercircle: {
-    backgroundColor: "#89A1FF", // Changed from red to match border color
-    width: 50,
-    height: 50,
-    borderRadius: 50, 
-    justifyContent: "center",
-    alignItems: "center",
   },
 });
 

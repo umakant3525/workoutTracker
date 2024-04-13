@@ -1,19 +1,22 @@
 import React, { useState } from "react";
-import {
-  Button,
-  StyleSheet,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-  Image,
-} from "react-native";
+import { Button, StyleSheet, Text, TextInput, TouchableOpacity, View, Image } from "react-native";
+import { useNavigation } from '@react-navigation/native';
+import { LinearGradient } from 'expo-linear-gradient'; 
 
 const Screen3 = () => {
   const [isChecked, setIsChecked] = useState(false);
+  const navigation = useNavigation();
 
   const handleCheckboxToggle = () => {
     setIsChecked(!isChecked);
+  };
+
+  const handleCreateAccount = () => {
+    navigation.navigate('Screen5');
+  };
+
+  const handleLogin = () => {
+    navigation.navigate('Screen4');
   };
 
   return (
@@ -60,8 +63,13 @@ const Screen3 = () => {
         </TouchableOpacity>
       </View>
 
-      <TouchableOpacity style={styles.btnContainer} onPress={() => {}}>
-        <Text style={styles.btnText}>Create an Account</Text>
+      <TouchableOpacity onPress={handleCreateAccount} >
+        <LinearGradient
+          colors={['#95BEFF', '#7B91FF']}
+          style={styles.btnContainer}
+        >
+          <Text style={styles.btnText}>Create an Account</Text>
+        </LinearGradient>
       </TouchableOpacity>
 
       <View style={styles.lineContainer}>
@@ -91,7 +99,7 @@ const Screen3 = () => {
 
       <Text style={styles.loginText}>
         Already have an account?{" "}
-        <Text style={{ color: "#93A9FF", textDecorationLine: "underline" }}>
+        <Text style={styles.loginLink} onPress={handleLogin}>
           Login
         </Text>
       </Text>
@@ -114,7 +122,7 @@ const styles = StyleSheet.create({
     marginBottom: 30,
     textAlign: "left",
     marginLeft: 16,
-  },  
+  },
   form: {
     marginBottom: 20,
   },
@@ -130,7 +138,7 @@ const styles = StyleSheet.create({
   checkboxContainer: {
     flexDirection: "row",
     alignItems: "center",
-    marginBottom: 80,
+    marginBottom: 20,
   },
   checkbox: {
     width: 22,
@@ -151,7 +159,6 @@ const styles = StyleSheet.create({
   btnContainer: {
     height: 50,
     borderRadius: 12,
-    backgroundColor: "#7B91FF",
     justifyContent: "center",
     alignItems: "center",
     marginBottom: 20,
@@ -196,5 +203,9 @@ const styles = StyleSheet.create({
   },
   loginText: {
     textAlign: "center",
+  },
+  loginLink: {
+    color: "#93A9FF",
+    textDecorationLine: "underline",
   },
 });

@@ -1,33 +1,37 @@
 import React from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
+import Btn from "../components/s1/Btn";
 
 const Screen2 = () => {
   const navigation = useNavigation();
 
-  const handlePress = () => {
-    navigation.navigate('Screen3'); // Assuming 'LanguageTranslator' is the screen to navigate to
+  const handleSkipPress = () => {
+    navigation.navigate('Screen3', {
+      transition: 'smartAnimate',
+      spring: { mass: 1, stiffness: 100, damping: 15 }
+    }); 
+  };
+
+  const handleBtnPress = () => {
+    navigation.navigate('Screen3', {
+      transition: 'smartAnimate',
+      timingFunction: 'ease-out',
+      duration: 917
+    }); 
   };
 
   return (
     <View style={styles.container}>
-     <TouchableOpacity style={styles.link} onPress={handlePress} >
+      <TouchableOpacity style={styles.link} onPress={handleSkipPress}>
         <Text style={styles.linkText}>Skip</Text>
       </TouchableOpacity>
       <Image style={styles.image} source={require("../assets/img/s2.png")} />
       <Text style={styles.title}>Get Burn</Text>
       <Text style={styles.subtitle}>
-      Let’s keep burning to achieve your goals, it hurts only temporarily, if you give up now you will be in pain forever
+        Let’s keep burning to achieve your goals, it hurts only temporarily, if you give up now you will be in pain forever
       </Text>
-
-      <View style={styles.bottomRight}>
-        <TouchableOpacity style={styles.btnBorder} onPress={handlePress} target="_blank">
-          <View style={styles.innercircle}>
-            <Ionicons name="chevron-forward" size={24} color="white" />
-          </View>
-        </TouchableOpacity>
-      </View>
+      <Btn handlePress={handleBtnPress} />
     </View>
   );
 };
@@ -53,7 +57,7 @@ const styles = StyleSheet.create({
   image: {
     width: 352,
     height: 234.61,
-    marginTop: 132,
+    marginTop: 200,
     alignSelf: "center",
   },
   title: {
@@ -61,41 +65,18 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     lineHeight: 24.38,
     color: "black",
-    marginTop: 20,
+    marginTop: 60,
     marginLeft: 16,
   },
   subtitle: {
     fontSize: 16,
-    fontWeight: "500",
+    fontWeight: "400",
     lineHeight: 19.5,
     textAlign: "left",
     color: "#787878",
-    marginTop: 10,
+    marginTop: 20,
     marginLeft: 16,
     marginRight: 16,
-  },
-  bottomRight: {
-    position: "absolute",
-    bottom: 20,
-    right: 20,
-  },
-  btnBorder: {
-    height: 60,
-    width: 60,
-    borderRadius: 30, 
-    backgroundColor: "white",
-    borderWidth: 1,
-    borderColor: "#89A1FF",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  innercircle: {
-    backgroundColor: "#89A1FF", // Changed from red to match border color
-    width: 50,
-    height: 50,
-    borderRadius: 50, 
-    justifyContent: "center",
-    alignItems: "center",
   },
 });
 

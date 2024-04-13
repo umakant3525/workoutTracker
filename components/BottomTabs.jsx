@@ -1,20 +1,45 @@
 import React, { useState } from "react";
-import { StyleSheet, TouchableOpacity, View } from "react-native";
+import { StyleSheet, TouchableOpacity, View, Modal, Text } from "react-native";
 import { Octicons, SimpleLineIcons, FontAwesome } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
+import { useNavigation, useRoute } from '@react-navigation/native';
 
 const BottomTabs = () => {
+  const navigation = useNavigation();
+  const route = useRoute();
   const [activeTab, setActiveTab] = useState("home");
+  const [isUserPopupOpen, setIsUserPopupOpen] = useState(false);
+  const [isSearchPopupOpen, setIsSearchPopupOpen] = useState(false);
 
   const handleTabPress = (tabName) => {
     setActiveTab(tabName);
+    switch (tabName) {
+      case "home":
+        navigation.navigate('Screen7');
+        break;
+      case "graph":
+        navigation.navigate('Screen6');
+        break;
+      case "camera":
+        setIsSearchPopupOpen(true);
+        break;
+      case "user":
+        if (route.params && route.params.UserProfile) {
+          navigation.navigate('UserProfile');
+        } else {
+          setIsUserPopupOpen(true);
+        }
+        break;
+      case "search":
+        setIsSearchPopupOpen(true);
+        break;
+      default:
+        break;
+    }
   };
 
   return (
     <View style={styles.bottomTabs}>
-
-<View>
-  </View>      
       <TouchableOpacity
         activeOpacity={0.8}
         onPress={() => handleTabPress("home")}
@@ -35,7 +60,7 @@ const BottomTabs = () => {
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 1 }}
       >
-        <TouchableOpacity activeOpacity={0.8} style={styles.touchableOpacity}>
+        <TouchableOpacity activeOpacity={0.8} onPress={() => handleTabPress("search")} style={styles.touchableOpacity}>
           <Octicons name="search" size={27} color="white" />
         </TouchableOpacity>
       </LinearGradient>
@@ -53,6 +78,24 @@ const BottomTabs = () => {
       >
         <FontAwesome name="user-o" size={28} color={activeTab === "user" ? "#829DFF" : "#7F7F7F"} />
       </TouchableOpacity>
+
+      <Modal visible={isUserPopupOpen} transparent animationType="fade">
+        <View style={styles.popup}>
+          <Text style={styles.popupText}>User Profile screen is not created yet!</Text>
+          <TouchableOpacity onPress={() => setIsUserPopupOpen(false)}>
+            <Text style={styles.closeButton}>Close</Text>
+          </TouchableOpacity>
+        </View>
+      </Modal>
+
+      <Modal visible={isSearchPopupOpen} transparent animationType="fade">
+        <View style={styles.popup}>
+          <Text style={styles.popupText}>Search functionality is not implemented yet!</Text>
+          <TouchableOpacity onPress={() => setIsSearchPopupOpen(false)}>
+            <Text style={styles.closeButton}>Close</Text>
+          </TouchableOpacity>
+        </View>
+      </Modal>
     </View>
   );
 };
@@ -62,7 +105,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",
-    backgroundColor: "#ffffff", // Adjust as needed
+    backgroundColor: "#ffffff",
     paddingVertical: 5,
     paddingHorizontal: 10,
   },
@@ -83,7 +126,29 @@ const styles = StyleSheet.create({
     width: 63,
     height: 63,
     borderRadius: 100,
-  }
+  },
+  activeTab: {
+    // Define styles for active tab if needed
+  },
+  popup: {
+    backgroundColor: 'white',
+    borderRadius: 10,
+    padding: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin: 20,
+    marginTop: 'auto',
+    marginBottom: 'auto',
+    elevation: 5,
+  },
+  popupText: {
+    fontSize: 18,
+    marginBottom: 10,
+  },
+  closeButton: {
+    fontSize: 16,
+    color: '#007BFF',
+  },
 });
 
 export default BottomTabs;

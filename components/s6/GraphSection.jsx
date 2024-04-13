@@ -1,5 +1,5 @@
-import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import React from 'react';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
 
 const barGraphData = [
   { time: '1:00pm', calories: 100 },
@@ -29,7 +29,6 @@ const barGraphData = [
 ];
 
 const GraphSection = () => {
-  // Find the maximum value of calories
   const maxCalories = Math.max(...barGraphData.map(data => data.calories));
   
   return (
@@ -63,7 +62,6 @@ const styles = StyleSheet.create({
   bar: {
     flex: 1,
     alignItems: 'center',
-
   },
   barFill: {
     width: 5,

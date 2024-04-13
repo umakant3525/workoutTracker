@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
-import { LinearGradient } from 'expo-linear-gradient'; // Import LinearGradient from expo-linear-gradient
+import { LinearGradient } from 'expo-linear-gradient';
+import { useNavigation } from '@react-navigation/native'; 
 
 const Screen5 = () => {
+  const navigation = useNavigation(); 
+
   const [options, setOptions] = useState([
     { label: "Weight Loss", checked: false },
     { label: "Muscle Gain", checked: false },
@@ -17,6 +20,11 @@ const Screen5 = () => {
     const newOptions = [...options];
     newOptions[index].checked = !newOptions[index].checked;
     setOptions(newOptions);
+  };
+
+  const handleConfirm = () => {
+    // Navigate to Screen6
+    navigation.navigate('Screen6');
   };
 
   return (
@@ -38,7 +46,7 @@ const Screen5 = () => {
         ))}
       </View>
 
-      <TouchableOpacity style={styles.btnContainer} onPress={() => {}}>
+      <TouchableOpacity style={styles.btnContainer} onPress={handleConfirm}>
         <LinearGradient
           colors={['#95BEFF','#7B91FF']}
           start={{ x: 0, y: 0 }}
@@ -89,7 +97,7 @@ const styles = StyleSheet.create({
   btnContainer: {
     borderRadius: 12,
     marginTop: 100,
-    overflow: 'hidden', // Ensure child LinearGradient doesn't overflow
+    overflow: 'hidden', 
   },
   btnGradient: {
     height: 50,

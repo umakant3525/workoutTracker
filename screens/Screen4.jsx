@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
+import { useState } from "react";
 import { Button, StyleSheet, Text, TextInput, TouchableOpacity, View, Image } from "react-native";
-import { Ionicons } from '@expo/vector-icons'; // Import Ionicons from Expo
+import { LinearGradient } from 'expo-linear-gradient'; 
+import { Ionicons } from '@expo/vector-icons'; 
 
-const Screen4 = () => {
+const Screen4 = ({ navigation }) => {
   const [isChecked, setIsChecked] = useState(false);
-  const [showPassword, setShowPassword] = useState(false); // State variable for password visibility
+  const [showPassword, setShowPassword] = useState(false); 
 
   const handleCheckboxToggle = () => {
     setIsChecked(!isChecked);
@@ -23,19 +25,26 @@ const Screen4 = () => {
           <TextInput
             style={styles.passwordInput}
             placeholder="Password"
-            secureTextEntry={!showPassword} // Toggle secureTextEntry based on showPassword state
+            secureTextEntry={!showPassword} 
           />
           <TouchableOpacity onPress={() => setShowPassword(!showPassword)} style={styles.eyeIcon}>
             <Ionicons name={showPassword ? 'eye-off' : 'eye'} size={24} color="#7F7F7F" />
           </TouchableOpacity>
         </View>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('ForgotPasswordScreen')}>
           <Text style={styles.forgotPasswordText}>Forgot your password?</Text>
         </TouchableOpacity>
       </View>
 
-      <TouchableOpacity style={styles.btnContainer} onPress={() => {}}>
-        <Text style={styles.btnText}>Sign In</Text>
+      <TouchableOpacity onPress={() => navigation.navigate('Screen5')}>
+        <LinearGradient
+          colors={['#95BEFF','#7B91FF']}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 0 }}
+          style={styles.btnContainer}
+        >
+          <Text style={styles.btnText}>Sign In</Text>
+        </LinearGradient>
       </TouchableOpacity>
 
       <View style={styles.lineContainer}>
@@ -63,12 +72,14 @@ const Screen4 = () => {
         </TouchableOpacity>
       </View>
 
-      <Text style={styles.loginText}>
-        Don’t have an account yet?{" "}
-        <Text style={{ color: "#93A9FF", textDecorationLine: "underline" }}>
-          Create an account
+      <TouchableOpacity onPress={() => navigation.navigate('Screen3')}>
+        <Text style={styles.loginText}>
+          Don’t have an account yet?{" "}
+          <Text style={{ color: "#93A9FF", textDecorationLine: "underline" }}>
+            Create an account
+          </Text>
         </Text>
-      </Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -80,7 +91,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     paddingHorizontal: 15,
-    paddingTop: 50, // Adjust padding for top space
+    paddingTop: 70, 
   },
   title: {
     fontSize: 24,
@@ -127,7 +138,6 @@ const styles = StyleSheet.create({
   btnContainer: {
     height: 50,
     borderRadius: 12,
-    backgroundColor: "#7B91FF",
     justifyContent: "center",
     alignItems: "center",
     marginBottom: 20,
