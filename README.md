@@ -1,5 +1,3 @@
-# workoutTracker
-
 # Workout Tracker App
 
 This Expo app helps you track your workouts and stay on top of your fitness goals.
@@ -7,48 +5,50 @@ This Expo app helps you track your workouts and stay on top of your fitness goal
 ## Screenshots
 
 <div style="text-align:center">
-    ![Screen 1](./REDMEIMG/screen1.jpg){height=800px}
+    <img src="./REDMEIMG/screen1.jpg" alt="Screen 1" height="600px">
 </div>
 ---
 <div style="text-align:center">
-    ![Screen 2](./REDMEIMG/screen2.jpg){height=800px}
+    <img src="./REDMEIMG/screen2.jpg" alt="Screen 2" height="600px">
 </div>
 ---
 <div style="text-align:center">
-    ![Screen 3](./REDMEIMG/screen3.jpg){height=800px}
+    <img src="./REDMEIMG/screen3.jpg" alt="Screen 3" height="600px">
 </div>
 ---
 <div style="text-align:center">
-    ![Screen 4](./REDMEIMG/screen4.jpg){height=800px}
+    <img src="./REDMEIMG/screen4.jpg" alt="Screen 4" height="600px">
 </div>
 ---
 <div style="text-align:center">
-    ![Screen 5](./REDMEIMG/screen5.jpg){height=800px}
+    <img src="./REDMEIMG/screen5.jpg" alt="Screen 5" height="600px">
 </div>
 ---
 <div style="text-align:center">
-    ![Screen 6](./REDMEIMG/screen6.jpg){height=800px}
+    <img src="./REDMEIMG/screen6.jpg" alt="Screen 6" height="600px">
 </div>
 
 ---
 
 ## Installation
 
-1. Download code in local machine:
+1. Download the code to your local machine:
     ```
     git clone https://github.com/umakant3525/workoutTracker
     ```
 
-    or download file unzip
+    or download and unzip the file.
 
-2. then, install the necessary dependencies using npm:
+2. Navigate to the project directory in your terminal.
+
+3. Install the necessary dependencies using npm:
     ```
     npm install
     ```
 
-3. Start the Expo development server:
+4. Start the Expo development server:
     ```
     npm start
     ```
 
-4. Scan the QR code using the Expo Go app on your Android or iOS device.
+5. Scan the QR code using the Expo Go app on your Android or iOS device to view the app.
