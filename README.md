@@ -1,49 +1,35 @@
 # Workout Tracker App
 
-This Android application was developed using React Native and Expo. It serves as a comprehensive workout tracker, allowing users to monitor their exercise routines, set goals, and track progress seamlessly. Special thanks to the  [Dacoid](https://www.dacoid.com/) team for providing the amazing Figma design, which conatins amzing user experriance in design user interface. I learn lot of thing from this application development phoase 
+This Android application was developed using React Native and Expo. It serves as a comprehensive workout tracker, allowing users to monitor their exercise routines, set goals, and track progress seamlessly. Special thanks to the [Dacoid](https://www.dacoid.com/) team for providing the amazing Figma design, which contains amazing user experience in design user interface. I learned a lot of things from this application development phase.
 
 ### Figma
 [Figma Design - View Here](https://www.figma.com/file/j3wxB67pZmYxK5LB71Hn2P/Assignment-Dacoid?type=design&node-id=1-36&mode=design&t=pUCV4QXoHBNaTapt-0)
 
-
 ## Screens
-<style>
-    .screens-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
 
-    .screen-img {
-        margin: 10px;
-        width: 300px;
-    }
-</style>
-
-<div class="screens-container">
-    <div class="screen-img">
-        <img src="./REDMEIMG/screen1.jpg" alt="Screen 1" height="600px">
+<div style="display: flex; flex-wrap: wrap; justify-content: center;">
+    <div style="flex: 0 0 33.33%; margin: 10px;">
+        <img src="./REDMEIMG/screen1.jpg" alt="Screen 1" height="400px">
     </div>
-    <div class="screen-img">
-        <img src="./REDMEIMG/screen2.jpg" alt="Screen 2" height="600px">
+    <div style="flex: 0 0 33.33%; margin: 10px;">
+        <img src="./REDMEIMG/screen2.jpg" alt="Screen 2" height="400px">
     </div>
-    <div class="screen-img">
-        <img src="./REDMEIMG/screen3.jpg" alt="Screen 3" height="600px">
+    <div style="flex: 0 0 33.33%; margin: 10px;">
+        <img src="./REDMEIMG/screen3.jpg" alt="Screen 3" height="400px">
     </div>
-    <div class="screen-img">
-        <img src="./REDMEIMG/screen4.jpg" alt="Screen 4" height="600px">
+    <div style="flex: 0 0 33.33%; margin: 10px;">
+        <img src="./REDMEIMG/screen4.jpg" alt="Screen 4" height="400px">
     </div>
-    <div class="screen-img">
-        <img src="./REDMEIMG/screen5.jpg" alt="Screen 5" height="600px">
+    <div style="flex: 0 0 33.33%; margin: 10px;">
+        <img src="./REDMEIMG/screen5.jpg" alt="Screen 5" height="400px">
     </div>
-    <div class="screen-img">
-        <img src="./REDMEIMG/screen6.jpg" alt="Screen 6" height="600px">
+    <div style="flex: 0 0 33.33%; margin: 10px;">
+        <img src="./REDMEIMG/screen6.jpg" alt="Screen 6" height="400px">
+    </div>
+    <div style="flex-basis: 100%; text-align: center; margin-top: 10px;">
+        <img src="./REDMEIMG/screen7.jpg" alt="Screen 7" height="400px">
     </div>
 </div>
-<div style="text-align:center">
-    <img src="./REDMEIMG/screen7.jpg" alt="Screen 7" height="600px">
-</div>
-
 
 ---
 
