@@ -6,17 +6,29 @@ This Expo app helps you track your workouts and stay on top of your fitness goal
 
 ## Screenshots
 
-![Screen 1](./REDMEIMG/screen1.jpg)
+<div style="text-align:center">
+    ![Screen 1](./REDMEIMG/screen1.jpg){height=800px}
+</div>
 ---
-![Screen 2](./REDMEIMG/screen2.jpg)
+<div style="text-align:center">
+    ![Screen 2](./REDMEIMG/screen2.jpg){height=800px}
+</div>
 ---
-![Screen 3](./REDMEIMG/screen3.jpg)
+<div style="text-align:center">
+    ![Screen 3](./REDMEIMG/screen3.jpg){height=800px}
+</div>
 ---
-![Screen 4](./REDMEIMG/screen4.jpg)
+<div style="text-align:center">
+    ![Screen 4](./REDMEIMG/screen4.jpg){height=800px}
+</div>
 ---
-![Screen 5](./REDMEIMG/screen5.jpg)
+<div style="text-align:center">
+    ![Screen 5](./REDMEIMG/screen5.jpg){height=800px}
+</div>
 ---
-![Screen 6](./REDMEIMG/screen6.jpg)
+<div style="text-align:center">
+    ![Screen 6](./REDMEIMG/screen6.jpg){height=800px}
+</div>
 
 ---
 
