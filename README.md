@@ -9,25 +9,25 @@ This Android application was developed using React Native and Expo. It serves as
 
 <div style="display: flex; flex-wrap: wrap; justify-content: center;">
     <div style="flex: 0 0 33.33%; margin: 10px;">
-        <img src="./REDMEIMG/screen1.jpg" alt="Screen 1" height="400px">
+        <img src="./REDMEIMG/screen1.jpg" alt="Screen 1" height="600px">
     </div>
     <div style="flex: 0 0 33.33%; margin: 10px;">
-        <img src="./REDMEIMG/screen2.jpg" alt="Screen 2" height="400px">
+        <img src="./REDMEIMG/screen2.jpg" alt="Screen 2" height="600px">
     </div>
     <div style="flex: 0 0 33.33%; margin: 10px;">
-        <img src="./REDMEIMG/screen3.jpg" alt="Screen 3" height="400px">
+        <img src="./REDMEIMG/screen3.jpg" alt="Screen 3" height="600px">
     </div>
     <div style="flex: 0 0 33.33%; margin: 10px;">
-        <img src="./REDMEIMG/screen4.jpg" alt="Screen 4" height="400px">
+        <img src="./REDMEIMG/screen4.jpg" alt="Screen 4" height="600px">
     </div>
     <div style="flex: 0 0 33.33%; margin: 10px;">
-        <img src="./REDMEIMG/screen5.jpg" alt="Screen 5" height="400px">
+        <img src="./REDMEIMG/screen5.jpg" alt="Screen 5" height="600px">
     </div>
     <div style="flex: 0 0 33.33%; margin: 10px;">
-        <img src="./REDMEIMG/screen6.jpg" alt="Screen 6" height="400px">
+        <img src="./REDMEIMG/screen6.jpg" alt="Screen 6" height="600px">
     </div>
     <div style="flex-basis: 100%; text-align: center; margin-top: 10px;">
-        <img src="./REDMEIMG/screen7.jpg" alt="Screen 7" height="400px">
+        <img src="./REDMEIMG/screen7.jpg" alt="Screen 7" height="600px">
     </div>
 </div>
 
